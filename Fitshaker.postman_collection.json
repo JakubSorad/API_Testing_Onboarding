@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "f7562e0b-f562-4c2d-92dc-b8c5e492bd65",
+		"name": "Fitshaker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37095916"
+	},
+	"item": [
+		{
+			"name": "Measurements",
+			"item": [
+				{
+					"name": "Get measurements",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update measurement",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"measurements\": [\n    {\n      \"month\": 7,\n      \"year\": 2024,\n      \"weight\": 78,\n      \"hips\": null,\n      \"thigh\": null,\n      \"waist\": null\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/mobile/v1/profile/measurements",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"v1",
+								"profile",
+								"measurements"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Get calendar",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"aktivita\",\n  \"date\": 1721599200000,\n  \"calories\": null,\n  \"durationMinutes\": null,\n  \"briefDescription\": null,\n  \"image\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/mobile/v1/calendar/activities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"v1",
+								"calendar",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit activity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"aktivita\",\n  \"date\": 1721599200000,\n  \"calories\": 58,\n  \"durationMinutes\": null,\n  \"briefDescription\": null,\n  \"image\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/mobile/v1/calendar/activities",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"v1",
+								"calendar",
+								"activities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit activity Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/mobile/v1/calendar/activities/547154",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mobile",
+								"v1",
+								"calendar",
+								"activities",
+								"547154"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Exercises",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/mobile/v1/exercises?limit=8&page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"mobile",
+						"v1",
+						"exercises"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "8"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Programs",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/mobile/v1/programs?limit=2&page=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"mobile",
+						"v1",
+						"programs"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
